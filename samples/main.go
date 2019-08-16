@@ -1,13 +1,31 @@
-# 汉语拼音合集包
+//++++++++++++++++++++++++++++++++++++++++
+// DingDing Tech 叮叮科技
+//++++++++++++++++++++++++++++++++++++++++
+// Author:ShirDon
+//++++++++++++++++++++++++++++++++++++++++
 
-#### 介绍
-汉语拼音合集包
+package main
 
-gopher们想必都知道，golang关于都汉语拼音的库少之又少，Shirdon抽空总结了汉语拼音包，包含40000多个字词，基本覆盖了汉语的拼音，
-喜欢的朋友欢迎star,fork!共同完善！
+import (
+	"fmt"
+	"gitee.com/shirdonl/pinyin/library"
+	"regexp"
+)
 
-#### 用法
-`dict := library.NewDict()
+//转换为字符串数组
+func ToSlice(s string) []string {
+	var split []string
+	re := regexp.MustCompile(`[^a-zA-Z1-4]+`)
+	for _, str := range re.Split(s, -1) {
+		if str != "" {
+			split = append(split, str)
+		}
+	}
+	return split
+}
+
+func main() {
+	dict := library.NewDict()
 
 	s := ""
 
@@ -76,4 +94,6 @@ gopher们想必都知道，golang关于都汉语拼音的库少之又少，Shird
 	s = dict.Convert(`我，测试？`, " ").ASCII()
 	fmt.Println(s)
 
-	fmt.Printf("%v", ToSlice(s))`
+	fmt.Printf("%v", ToSlice(s))
+
+}
