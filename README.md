@@ -7,7 +7,7 @@ gopher们想必都知道，golang关于都汉语拼音的库少之又少，Shird
 喜欢的朋友欢迎star,fork!共同完善！
 
 #### 用法
-
+```
 package main
  import (
  	"fmt"
@@ -45,3 +45,4 @@ package main
  	fmt.Println(s)
  	// 转换简体中文和繁体中文, 转换为带 空格 分隔的拼音字符
 }
+```
