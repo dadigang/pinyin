@@ -7,26 +7,20 @@ gopher们想必都知道，golang关于都汉语拼音的库少之又少，Shird
 喜欢的朋友欢迎star,fork!共同完善！
 
 #### 用法
-`
- package main
- 
+`package main
  import (
  	"fmt"
  	"gitee.com/shirdonl/pinyin/library"
  	"regexp"
  )
- 
  func main() {
  	dict := library.NewDict()
- 
  	s := ""
- 
  	s = dict.Convert(`我，何時成大牛？`, " ").Unicode()
  	fmt.Println(s)
  	// wǒ, hé shí néng bào fù?
  	s = dict.Sentence(`我，何時成大牛？`).Unicode()
  	fmt.Println(s)
- 
  	// ----
  	// 转换接口: Dict.Convert
  	s = dict.Convert(`我爱编程？`, " ").ASCII()
