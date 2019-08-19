@@ -19,7 +19,7 @@ package main
  	s := ""
  	s = dict.Convert(`我，何時成大牛？`, " ").Unicode()
  	fmt.Println(s)
- 	// wǒ, hé shí néng bào fù?
+ 	
  	s = dict.Sentence(`我，何時成大牛？`).Unicode()
  	fmt.Println(s)
  	// ----
@@ -46,3 +46,4 @@ package main
  	// 转换简体中文和繁体中文, 转换为带 空格 分隔的拼音字符
 }
 ```
+开源协议:https://opensource.org/licenses/GPL-3.0
